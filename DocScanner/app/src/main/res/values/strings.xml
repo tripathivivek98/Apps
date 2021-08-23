@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DocScanner</string>
+    <string name="title_camera">Camera</string>
+    <string name="content_desc">image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

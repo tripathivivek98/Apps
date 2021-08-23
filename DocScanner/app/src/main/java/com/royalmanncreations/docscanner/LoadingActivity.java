@@ -1,4 +1,4 @@
-package com.royalmanncreations.tambola;
+package com.royalmanncreations.docscanner;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,27 +6,34 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 public class LoadingActivity extends AppCompatActivity {
-    private final int SPLASH_DISPLAY_LENGTH = 5000;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
+        check_credential();
+    }
+
+    void check_credential() {
         try {
-            new Handler().postDelayed(new Runnable() {
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    /* Create an Intent that will start the Main-Activity. */
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                     finish();
                 }
-            }, SPLASH_DISPLAY_LENGTH);
+            }, 2000);
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        check_credential();
     }
 }
