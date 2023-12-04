@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         status = findViewById(R.id.status);
-
     }
 
     public void playerTap(View view) {
@@ -70,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
                 //set the image of X
                 img.setImageResource(R.drawable.x);
                 activePlayer = 1;
-
                 //Change the status
                 status.setText("O's turn, tap to play");
 
@@ -85,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         int flag = 0;
 
         //check if any player has won
-        if (counter > 5) {
+        if (counter > 4) {
             for (int[] winPosition : winPositions) {
                 if (gameState[winPosition[0]] == gameState[winPosition[1]] &&
                         gameState[winPosition[1]] == gameState[winPosition[2]] && gameState[winPosition[0]] != 2) {
@@ -99,10 +97,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     //Announce Winner
                     status.setText(winnerStr);
-
                 }
             }
-
             //set the status if the match is Draw
             if (counter == 9 && flag == 0) {
                 status.setText("Match Draw");

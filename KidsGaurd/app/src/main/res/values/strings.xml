@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KidsGaurd</string>
+    <string name="login">Login</string>
+    <string name="welcome">Welcome</string>
+    <string name="hey">Hey! \nLogin To Continue</string>
+    <string name="username">Username</string>
+</resources>
